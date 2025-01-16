@@ -1,0 +1,55 @@
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.searchForm {
+  animation: fadeSlideIn 0.5s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 50px;
+  font-family: "Lora", serif;
+  .input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background-color: #8aa399;
+    border-radius: 10px;
+    margin-right: 20px;
+    height: 70px;
+    font-size: 1.75em;
+    &:focus {
+      background-color: #d9a5b3;
+    }
+    &::placeholder {
+      color: #333333;
+    }
+  }
+  .button {
+    padding: 10px 20px;
+    background-color: #8aa399;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.75rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transform: scale(1);
+    color: #333333;
+
+    &:hover {
+      background-color: #d9a5b3;
+      transform: scale(1.2);
+    }
+    &:active {
+      transform: scale(1.1);
+    }
+  }
+}
