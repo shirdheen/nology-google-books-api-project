@@ -1,8 +1,9 @@
 import BookCard from "../BookCard/BookCard";
+import classes from "./BookGrid.module.scss";
 
 const BookGrid = ({ books }) => {
   return (
-    <div>
+    <div className={classes.grid}>
       {books.map((book) => (
         <BookCard key={book.id} book={book} />
       ))}
