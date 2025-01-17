@@ -1,5 +1,5 @@
 import classes from "./BookCard.module.scss";
-const BookCard = ({ book }) => {
+const BookCard = ({ book, onClick }) => {
   const { title, authors, description, imageLinks } = book.volumeInfo;
 
   const truncateDescription = (text, wordLimit = 10) => {
@@ -11,7 +11,7 @@ const BookCard = ({ book }) => {
   };
 
   return (
-    <article className={classes.card} onClick={() => onClick(book)}>
+    <article className={classes.card} onClick={onClick}>
       <img
         className={classes.image}
         src={

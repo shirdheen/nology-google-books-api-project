@@ -1,0 +1,68 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.367);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modalContent {
+  background: #f7f4e9;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #5a3e36;
+  width: 500px;
+  max-width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  color: #5a3e36;
+}
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #5a3e36;
+  &:hover {
+    color: #8aa399;
+  }
+}
+
+.bookDetails {
+  text-align: center;
+}
+
+.image {
+  max-width: 150px;
+  margin: 0 auto 20px auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+  font-family: "Merriweather";
+}
+
+.authors,
+.category,
+.publisher,
+.language,
+.description {
+  margin: 5px;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: "Lora";
+}
