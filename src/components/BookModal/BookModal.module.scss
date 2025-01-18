@@ -9,7 +9,15 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
 }
+.modalOverlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .modalContent {
   background: #f7f4e9;
   padding: 20px;
@@ -22,7 +30,17 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
   color: #5a3e36;
+  transform: scale(0.9);
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
+
+.modalOverlay.active .modalContent {
+  transform: scale(1);
+  opacity: 1;
+}
+
 .closeButton {
   position: absolute;
   top: 10px;

@@ -1,6 +1,6 @@
 import classes from "./BookModal.module.scss";
 
-const BookModal = ({ book, onClose }) => {
+const BookModal = ({ book, onClose, isOpen }) => {
   if (!book) {
     return null;
   }
@@ -15,7 +15,10 @@ const BookModal = ({ book, onClose }) => {
   } = book.volumeInfo;
 
   return (
-    <div className={classes.modalOverlay} onClick={onClose}>
+    <div
+      className={`${classes.modalOverlay} ${isOpen ? classes.active : ""}`}
+      onClick={onClose}
+    >
       <div
         className={classes.modalContent}
         onClick={(e) => e.stopPropagation()}

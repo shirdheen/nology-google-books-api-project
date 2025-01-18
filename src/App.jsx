@@ -12,6 +12,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [selectedBook, setSelectedBook] = useState(null);
+  const [openModal, setopenModal] = useState(false);
 
   const handleSearch = async (query) => {
     setBooks([]);
@@ -29,10 +30,12 @@ function App() {
 
   const handleBookClick = (book) => {
     setSelectedBook(book);
+    setopenModal(true);
   };
 
   const handleCloseModal = () => {
     setSelectedBook(null);
+    setopenModal(false);
   };
 
   return (
@@ -43,7 +46,11 @@ function App() {
       {error && <ErrorMessage message={error} />}
       <BookGrid books={books} onBookClick={handleBookClick} />
       {selectedBook && (
-        <BookModal book={selectedBook} onClose={handleCloseModal} />
+        <BookModal
+          isOpen={openModal}
+          book={selectedBook}
+          onClose={handleCloseModal}
+        />
       )}
     </>
   );
