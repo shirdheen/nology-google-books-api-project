@@ -1,3 +1,5 @@
+@import "../../partials/colors.scss";
+
 .card {
   position: relative;
   width: 200px;
@@ -33,7 +35,7 @@
   padding: 10px;
   box-sizing: border-box;
   background: #d9a5b3e6;
-  color: #5a3e36;
+  color: $cordwood;
   opacity: 0;
   transform: translateY(100%);
   transition: opacity 0.3 ease, transform 0.3s ease;

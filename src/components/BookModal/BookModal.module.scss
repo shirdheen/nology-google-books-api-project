@@ -1,3 +1,6 @@
+@import "../../partials/media-queries.scss";
+@import "../../partials/colors.scss";
+
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -12,28 +15,37 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
-}
-.modalOverlay.active {
-  opacity: 1;
-  pointer-events: auto;
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 .modalContent {
   background: #f7f4e9;
   padding: 20px;
   border-radius: 10px;
-  border: 2px solid #5a3e36;
+  border: 2px solid $cordwood;
   width: 500px;
   max-width: 90%;
   max-height: 80vh;
   overflow-y: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
-  color: #5a3e36;
+  color: $cordwood;
   transform: scale(0.9);
   opacity: 0;
   will-change: transform, opacity;
   transition: transform 0.4s ease, opacity 0.4s ease;
+  @include tablet {
+    width: 400px;
+    max-height: 70vh;
+  }
+  @include phone {
+    width: 90%;
+    max-height: 60vh;
+    padding: 15px;
+  }
 }
 
 .modalOverlay.active .modalContent {
@@ -50,14 +62,21 @@
   font-size: 2rem;
   font-weight: 700;
   cursor: pointer;
-  color: #5a3e36;
+  color: $cordwood;
   &:hover {
-    color: #8aa399;
+    color: $morning-blue;
+  }
+  @include phone {
+    font-size: 1.5rem;
   }
 }
 
 .bookDetails {
   text-align: center;
+  @include phone {
+    text-align: left;
+    padding: 10px;
+  }
 }
 
 .image {
@@ -65,6 +84,14 @@
   margin: 0 auto 20px auto;
   display: block;
   border-radius: 8px;
+  @include tablet {
+    max-width: 120px;
+    margin-bottom: 15px;
+  }
+  @include phone {
+    max-width: 100px;
+    margin-bottom: 10px;
+  }
 }
 
 .title {
@@ -72,6 +99,12 @@
   font-weight: bold;
   margin: 10px 0;
   font-family: "Merriweather";
+  @include tablet {
+    font-size: 1.3rem;
+  }
+  @include phone {
+    font-size: 1.2rem;
+  }
 }
 
 .authors,
@@ -83,4 +116,10 @@
   font-size: 1rem;
   line-height: 1.5;
   font-family: "Lora";
+  @include tablet {
+    font-size: 0.9rem;
+  }
+  @include phone {
+    font-size: 0.8rem;
+  }
 }
