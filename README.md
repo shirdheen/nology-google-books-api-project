@@ -27,10 +27,20 @@
 1. Clone the repository
 
 ```bash
-git clone https://github.com/shirdheen/nology-fakeos-project
+git clone https://github.com/shirdheen/nology-google-books-api-project
 ```
 
-2. Open `index.html` in your browser.
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Run the development server.
+
+```bash
+npm run build
+```
 
 ## Design Goals/Approach
 
@@ -45,23 +55,25 @@ git clone https://github.com/shirdheen/nology-fakeos-project
 
 ## Features
 
-- Wallpaper that scales dynamically to fit the viewport.
-- A menu modal with options including: Settings, About, and Help.
-- Weather modal that fetches live weather data using the OpenWeather API.
-- Current date and time displayed dynamically.
-- Clickable icons to open apps, with a tooltip displayed you hover on the icon.
+- Aesthetic header with the page title and subtitle.
+- Search bar for users to search with a query string.
+- Tiles laid out in a responsive grid format.
+  - On hover, the title, description, and author will be revealed.
+  - On clicking the tile, a modal will open showing more detailed information.
+- Handle edge cases and errors (e.g., no results or invalid queries).
+- User-friendly design with feedback for different states.
+- Fully responsive layout.
 
 ## Known Issues
 
-- The project is not fully responsive for mobile. It has been currently design for desktop purposes only.
-- There are no animations for when the modals are opened.
+- Smoother animations for the modals.
 
 ## Bugs to be Fixed
 
+- The transitions for the modal are not rendering as the way they should.
+
 ## Future Goals
 
-- Add animations for modals.
-- Introduce more app options like Notes, Dictionary, etc.
-- Create a responsive design to support mobile views.
-- Add a dark mode toggle for the **Settings** option in the menu.
-- Add modals for **Help** and **About** options in the menu with some information on the OS.
+- Add pagination.
+- Add the option of moving to the next book within the modal.
+- Allow users to save books that they like or want to read.

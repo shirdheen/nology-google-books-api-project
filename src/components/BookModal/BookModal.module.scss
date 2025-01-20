@@ -1,6 +1,14 @@
-@import "../../partials/media-queries.scss";
-@import "../../partials/colors.scss";
+@use "../../partials/media-queries.scss";
+@use "../../partials/colors.scss";
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -12,45 +20,30 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  opacity: 0;
-  // pointer-events: none;
-  transition: opacity 0.4s ease;
-  &.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
+  animation: fadeIn 0.3s;
 }
 
 .modalContent {
-  background: #f7f4e9;
+  background: colors.$risotto;
   padding: 20px;
   border-radius: 10px;
-  border: 2px solid $cordwood;
+  border: 2px solid colors.$cordwood;
   width: 500px;
   max-width: 90%;
   max-height: 80vh;
   overflow-y: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
-  color: $cordwood;
-  transform: scale(0.9);
-  opacity: 0;
-  will-change: transform, opacity;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  @include tablet {
+  color: colors.$cordwood;
+  @include media-queries.tablet {
     width: 400px;
     max-height: 70vh;
   }
-  @include phone {
+  @include media-queries.phone {
     width: 90%;
     max-height: 60vh;
     padding: 15px;
   }
-}
-
-.modalOverlay.active .modalContent {
-  transform: scale(1);
-  opacity: 1;
 }
 
 .closeButton {
@@ -62,18 +55,18 @@
   font-size: 2rem;
   font-weight: 700;
   cursor: pointer;
-  color: $cordwood;
+  color: colors.$cordwood;
   &:hover {
-    color: $morning-blue;
+    color: colors.$morning-blue;
   }
-  @include phone {
+  @include media-queries.phone {
     font-size: 1.5rem;
   }
 }
 
 .bookDetails {
   text-align: center;
-  @include phone {
+  @include media-queries.phone {
     padding: 10px;
   }
 }
@@ -83,11 +76,11 @@
   margin: 0 auto 20px auto;
   display: block;
   border-radius: 8px;
-  @include tablet {
+  @include media-queries.tablet {
     max-width: 120px;
     margin-bottom: 15px;
   }
-  @include phone {
+  @include media-queries.phone {
     max-width: 100px;
     margin-bottom: 10px;
   }
@@ -98,10 +91,10 @@
   font-weight: bold;
   margin: 10px 0;
   font-family: "Merriweather";
-  @include tablet {
+  @include media-queries.tablet {
     font-size: 1.3rem;
   }
-  @include phone {
+  @include media-queries.phone {
     font-size: 1.2rem;
   }
 }
@@ -115,10 +108,10 @@
   font-size: 1rem;
   line-height: 1.5;
   font-family: "Lora";
-  @include tablet {
+  @include media-queries.tablet {
     font-size: 0.9rem;
   }
-  @include phone {
+  @include media-queries.phone {
     font-size: 0.8rem;
   }
 }

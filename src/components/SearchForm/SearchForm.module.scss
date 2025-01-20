@@ -1,5 +1,5 @@
-@import "../../partials/media-queries.scss";
-@import "../../partials/colors.scss";
+@use "../../partials/media-queries.scss";
+@use "../../partials/colors.scss";
 
 @keyframes fadeSlideIn {
   from {
@@ -16,10 +16,10 @@
   flex-direction: column;
   font-family: "Lora", serif;
   margin: 20px 50px;
-  @include tablet {
+  @include media-queries.tablet {
     margin: 20px 30px;
   }
-  @include phone {
+  @include media-queries.phone {
     margin: 20px 15px;
   }
   .searchForm {
@@ -29,7 +29,7 @@
     align-items: center;
     gap: 10px;
 
-    @include phone {
+    @include media-queries.phone {
       flex-direction: column;
       gap: 10px;
     }
@@ -38,22 +38,22 @@
       flex: 1;
       padding: 10px;
       border: none;
-      background-color: $morning-blue;
+      background-color: colors.$morning-blue;
       border-radius: 10px;
       margin-right: 20px;
       height: 50px;
       font-size: 1.75em;
       &:focus {
-        background-color: $pink-nectar;
+        background-color: colors.$pink-nectar;
       }
       &::placeholder {
-        color: $carbon;
+        color: colors.$carbon;
       }
-      @include tablet {
+      @include media-queries.tablet {
         font-size: 1.5rem;
         height: 45px;
       }
-      @include phone {
+      @include media-queries.phone {
         font-size: 1.2rem;
         height: 40px;
         margin-right: 0;
@@ -62,7 +62,7 @@
     }
     .button {
       padding: 10px 20px;
-      background-color: $morning-blue;
+      background-color: colors.$morning-blue;
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -70,20 +70,20 @@
       font-weight: bold;
       transition: background-color 0.3s ease, transform 0.3s ease;
       transform: scale(1);
-      color: $carbon;
+      color: colors.$carbon;
 
       &:hover {
-        background-color: $pink-nectar;
+        background-color: colors.$pink-nectar;
         transform: scale(1.2);
       }
       &:active {
         transform: scale(1.1);
       }
-      @include tablet {
+      @include media-queries.tablet {
         font-size: 1.5rem;
         padding: 8px 18px;
       }
-      @include phone {
+      @include media-queries.phone {
         font-size: 1.2rem;
         padding: 6px 12px;
         width: 30%;

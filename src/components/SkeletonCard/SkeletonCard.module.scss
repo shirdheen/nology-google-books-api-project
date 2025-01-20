@@ -1,0 +1,19 @@
+.skeletonCard {
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: shimmer 0.1s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

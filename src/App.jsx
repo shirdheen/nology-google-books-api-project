@@ -6,6 +6,8 @@ import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner.jsx";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage.jsx";
 import BookGrid from "./components/BookGrid/BookGrid.jsx";
 import BookModal from "./components/BookModal/BookModal.jsx";
+import SkeletonCard from "./components/SkeletonCard/SkeletonCard.jsx";
+import classes from "./App.module.scss";
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -42,7 +44,18 @@ function App() {
     <>
       <Header />
       <SearchForm onSearch={handleSearch} />
-      {loading && <LoadingSpinner />}
+      {loading && (
+        <>
+          <LoadingSpinner />
+          <div className={classes.skeletonGrid}>
+            {Array(40)
+              .fill(0)
+              .map((_, index) => (
+                <SkeletonCard key={index} />
+              ))}
+          </div>
+        </>
+      )}
       {error && <ErrorMessage message={error} />}
       <BookGrid books={books} onBookClick={handleBookClick} />
       {selectedBook && (

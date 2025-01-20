@@ -1,4 +1,4 @@
-@import "../../partials/colors.scss";
+@use "../../partials/colors.scss";
 
 .card {
   position: relative;
@@ -35,7 +35,7 @@
   padding: 10px;
   box-sizing: border-box;
   background: #d9a5b3e6;
-  color: $cordwood;
+  color: colors.$cordwood;
   opacity: 0;
   transform: translateY(100%);
   transition: opacity 0.3 ease, transform 0.3s ease;

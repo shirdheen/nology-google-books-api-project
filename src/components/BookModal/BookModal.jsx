@@ -15,10 +15,7 @@ const BookModal = ({ book, onClose, isOpen }) => {
   } = book.volumeInfo;
 
   return (
-    <div
-      className={`${classes.modalOverlay} ${isOpen ? classes.active : ""}`}
-      onClick={onClose}
-    >
+    <div className={classes.modalOverlay} onClick={onClose}>
       <div
         className={classes.modalContent}
         onClick={(e) => e.stopPropagation()}
