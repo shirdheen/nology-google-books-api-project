@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header/Header";
 import SearchForm from "./components/SearchForm/SearchForm";
-import { fetchBooks } from "./services/google-books-api.js";
+import { fetchBooks } from "./services/google-books-api-fetch.js";
 import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner.jsx";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage.jsx";
 import BookGrid from "./components/BookGrid/BookGrid.jsx";
@@ -22,7 +22,7 @@ function App() {
       const fetchedBooks = await fetchBooks(query);
       setBooks(fetchedBooks);
     } catch (e) {
-      setError("Oops, failed to fetch books. Please try again.");
+      setError(e.message);
     } finally {
       setLoading(false);
     }
